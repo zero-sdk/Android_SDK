@@ -193,7 +193,7 @@ public class MyCTAdEventListener extends CTAdEventListener {
 
 ``` java
     /**
-     * @param slotId     cloudmobi id
+     * @param slotId     zcoup id
      * @param context    context
      * @param adListener callback listener 
      */
@@ -245,7 +245,7 @@ public class MyCTAdEventListener extends CTAdEventListener {
 
 ```java
     /**
-     * @param slotId     cloudmobi id
+     * @param slotId     zcoup id
      * @param context    context
      * @param adListener callback listener 
      */
@@ -291,7 +291,7 @@ public class MyCTAdEventListener extends CTAdEventListener {
 ``` java
     /**
      * @param reqAdNumber request ads num
-     * @param slotId      cloudmobi id
+     * @param slotId      zcoup id
      * @param context     context
      * @param adListener  callback listener 
      */
@@ -321,7 +321,7 @@ public class MyCTAdEventListener extends CTAdEventListener {
 
     /**
      * @param context           context
-     * @param slotId            cloudmobi id
+     * @param slotId            zcoup id
      * @param adSize			AdSize.AD_SIZE_320X50,
      							AdSize.AD_SIZE_320X100,
      							AdSize.AD_SIZE_300X250;
@@ -382,7 +382,7 @@ public class MyCTAdEventListener extends CTAdEventListener {
 ``` java
     /**
      * @param context           context
-     * @param slotId            cloudmobi id
+     * @param slotId            zcoup id
      * @param adListener        callback listener 
      */
     ZcoupSDK.preloadInterstitialAd(context, "Your slotID",new MyCTAdEventListener() {
@@ -434,8 +434,8 @@ public class MyCTAdEventListener extends CTAdEventListener {
 ``` groovy
 	dependencies {
         	compile files('libs/zcoup_base_xx.jar')
-        	compile files('libs/cloudssp_appwall_xx.jar')       // for appwall        
-        	compile files('libs/cloudssp_imageloader_xx.jar')   // for imageloader
+        	compile files('libs/zcoup_appwall_xx.jar')       // for appwall        
+        	compile files('libs/zcoup_imageloader_xx.jar')   // for imageloader
 	}
 ```
 
