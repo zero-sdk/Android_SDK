@@ -8,7 +8,7 @@
 
     [3.1 Integrating the ZCoup SDK in to project](#step1)
 
-    [3.2 Initialize the Cloudmobi SDK](#step2)
+    [3.2 Initialize the Zcoup SDK](#step2)
 
     [3.3 Android code obfuscation](#step3)
 
@@ -37,7 +37,8 @@
 
 ### <a name="step1">2.1 Integrating the ZCoup SDK in to project</a>
 
-* [Download the latest SDK](https://github.com/cloudmobi/AndroidSDK/blob/master/AndroidSDK.zip)
+* [Download the latest SDK](<https://github.com/zero-sdk/Android_SDK/blob/master/ZcoupSDK.zip> )
+
 * Detail of the different jars：
 
   | jar name                 | jar function                                    | require(Y/N) |
@@ -136,7 +137,7 @@
 
 ## <a name="note">Integration Notes</a>
 
-​	If you live in a country, such as China, which is forbidden google play, two prerequisites to get Cloudmobi ads: 
+​	If you live in a country, such as China, which is forbidden google play, two prerequisites to get Zcoup ads: 
 > * GooglePlay has installed on your device.
 > * Your device have connect to VPN.
 
