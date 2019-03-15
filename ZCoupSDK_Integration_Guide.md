@@ -694,4 +694,27 @@ public void videoRewarded(String rewardName, String rewardAmount) {
         rl_container.addView(videoLayout);
     }
 ```
+## <a name="error">Error Code For SDK</a>
 
+| Error Code                        | Description                              |
+| --------------------------------- | ---------------------------------------- |
+| ERR\_000\_TRACK                   | Track exception                          |
+| ERR\_001\_INVALID_INPUT           | Invalid parameter                        |
+| ERR\_002\_NETWORK                 | Network exception                        |
+| ERR\_003\_REAL_API                | Error from Ad Server                     |
+| ERR\_004\_INVALID_DATA            | Invalid advertisement data               |
+| ERR\_005\_RENDER_FAIL             | Advertisement render failed              |
+| ERR\_006\_LANDING_URL             | Landing URL failed                       |
+| ERR\_007\_TO_DEFAULT_MARKET       | Default Landing URL failed               |
+| ERR\_008\_DL_URL                  | Deep-Link exception                      |
+| ERR\_009\_DL_URL_JUMP             | Deep-Link jump exception                 |
+| ERR\_010\_APK_DOWNLOAD_URL        | Application package download failed      |
+| ERR\_011\_APK_INSTALL             | Application install failed               |
+| ERR\_012\_VIDEO_LOAD              | Load the video exception                 |
+| ERR\_013\_PAGE_LOAD               | HTML5 page load failed                   |
+| ERR\_014\_JAR_UPDATE_VERSION      | Update jar check failed                  |
+| ERR\_015\_GET_GAID                | Cannot get google advertisement id - GAID retrieval failed |
+| ERR\_016\_GET_AD_CONFIG           | Cannot get the account configuration or template |
+| ERR\_017\_INTERSTITIAL_SHOW_NO_AD | Tried to load the interstitial advertisement, but the advertisement is not ready/loading |
+| ERR\_018\_AD_CLOSED               | Ad slotId has been closed                |
+| ERR\_999\_OTHERS                  | All other errors                         |
