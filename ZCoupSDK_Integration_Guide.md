@@ -120,7 +120,7 @@
             }
      });
 ```
-**set https schema**
+**Set schema https**
 ```java
       ZcoupSDK.setSchema(true);
 ```
