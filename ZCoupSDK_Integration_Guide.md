@@ -120,6 +120,10 @@
             }
      });
 ```
+**set https schema**
+```java
+      ZcoupSDK.setSchema(true);
+```
 
 ## <a name="step3">2.3 Obfuscation Configuration</a> 
 > If it needs to obfuscate the codes in building the project process, you should add the following codes into the proguard file:
