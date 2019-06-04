@@ -72,6 +72,11 @@
 	<activity android:name="com.zcoup.base.view.InnerWebViewActivity" />
 
 	<!--Optional-->
+	<provider
+            android:authorities="${applicationId}.xxprovider"
+            android:name="com.zcoup.base.core.ZcoupProvider"
+            android:exported="false"/>
+	
 	<receiver android:name="com.zcoup.base.tp.UtilityReceiver">
     	<intent-filter>
         	<action android:name="android.intent.action.PACKAGE_ADDED" />
@@ -722,3 +727,5 @@ public void videoRewarded(String rewardName, String rewardAmount) {
 | ERR\_017\_INTERSTITIAL_SHOW_NO_AD | Tried to load the interstitial advertisement, but the advertisement is not ready/loading |
 | ERR\_018\_AD_CLOSED               | Ad slotId has been closed                |
 | ERR\_999\_OTHERS                  | All other errors                         |
+
+

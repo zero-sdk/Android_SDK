@@ -2,6 +2,7 @@
 
 | Version | Release Date | Notes                                    |
 | ------- | :----------: | :--------------------------------------- |
+| 4.1.0 | 2019-6-4 | * adding an SDK initialization method | 
 | 4.0.9 | 2019-5-23 | * optimize revenue and speed up SDK initialization | 
 | 4.0.8 | 2019-4-22 | * optimize performance and remove unnecessary business processing |
 | 4.0.7   |  2019-4-17   | * fix Promote function, add flow optimization |
