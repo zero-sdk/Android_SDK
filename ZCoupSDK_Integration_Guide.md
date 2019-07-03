@@ -38,7 +38,7 @@
 - Please make sure you have added an app and at least one ad slot in ZCoup Platform.
 - Please download [our latest SDK](https://github.com/zero-sdk/Android_SDK/blob/master/AndroidSDK.zip) .
 
-## <a name="integration">Integration ZCoup SDK</a>  
+## <a name="integration">2.Integration ZCoup SDK</a>  
 
 ### <a name="step1">2.1 Integrating the ZCoup SDK in to project</a>
 
