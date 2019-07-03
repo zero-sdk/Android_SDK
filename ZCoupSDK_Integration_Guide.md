@@ -2,15 +2,15 @@
 
 1. [Introduction](#introduction)
 
-2. [Integration Notes](#note)
+2. [Integration ZCoup SDK](#integration)
 
-3. [Integration ZCoup SDK](#integration)
+    [2.1 Integrating the ZCoup SDK in to project](#step1)
 
-    [3.1 Integrating the ZCoup SDK in to project](#step1)
+    [2.2 Initialize the Zcoup SDK](#step2)
 
-    [3.2 Initialize the Zcoup SDK](#step2)
-
-    [3.3 Android code obfuscation](#step3)
+    [2.3 Android code obfuscation](#step3)
+    
+3. [Integration Notes](#note)
 
 4. [Request Ad](#request)
 
@@ -149,7 +149,7 @@
 ```
 
 
-## <a name="note">Integration Notes</a>
+## <a name="note">3.Integration Notes</a>
 
 ​	If you live in a country, such as China, which is forbidden google play, two prerequisites to get Zcoup ads: 
 > * GooglePlay has installed on your device.
