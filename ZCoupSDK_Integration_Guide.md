@@ -72,11 +72,6 @@
 	<activity android:name="com.zcoup.base.view.InnerWebViewActivity" />
 
 	<!--Optional-->
-	<provider
-            android:authorities="${applicationId}.xxprovider"
-            android:name="com.zcoup.base.core.ZcoupProvider"
-            android:exported="false"/>
-	
 	<receiver android:name="com.zcoup.base.tp.UtilityReceiver">
     	<intent-filter>
         	<action android:name="android.intent.action.PACKAGE_ADDED" />
