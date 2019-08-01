@@ -70,7 +70,12 @@
 
 	<!-- Necessary -->
 	<activity android:name="com.zcoup.base.view.InnerWebViewActivity" />
-
+	
+	<provider
+            android:authorities="${applicationId}.xxprovider"
+            android:name="com.zcoup.base.core.ZcoupProvider"
+            android:exported="false"/>
+            
 	<!--Optional-->
 	<receiver android:name="com.zcoup.base.tp.UtilityReceiver">
     	<intent-filter>
