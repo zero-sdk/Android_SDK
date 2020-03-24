@@ -23,11 +23,13 @@
     
     [4.3 Interstitial](#interstitial)
     
-    [4.4 Appwall](#appwall)
+    [4.4 Splash](#splash)
     
-    [4.5 Rewarded Video](#reward)
+    [4.5 Appwall](#appwall)
     
-    [4.6 Native Video](#native_video)
+    [4.6 Rewarded Video](#reward)
+    
+    [4.7 Native Video](#native_video)
     
 5. [Error Code For SDK](#error)
 
@@ -440,8 +442,94 @@ public class MyCTAdEventListener extends CTAdEventListener {
 ![image](https://user-images.githubusercontent.com/20314643/41895941-e0c6ad1a-7955-11e8-9393-ed91e4a4906f.png)
 
 
+## <a name="splash">4.4 Splash Ads Integration</a>
 
-## <a name="appwall">4.4 Appwall integration</a>
+> Configure the AndroidManifest.xml for Splash AD
+
+```xml
+	<activity android:name="com.zcoup.base.view.SplashAdActivity" />    
+```
+
+> Get Splash AD
+
+``` java
+/**
+ * @param context    context
+ * @param slotId     slotId
+ * @param listener callback listener
+ * @param timeOut timeOut  timeout time (in milliseconds)
+ */
+
+ZcoupSDK.getSplashAd(this, Config.slotIdNative, new MyCTAdEventListener() {
+
+
+    @Override
+    public void onReceiveAdSucceed(ZCNative result) {
+        Log.d(TAG, "Splash Ad Loaded.");
+        if (!isFinishing()) {
+            finish();
+        }
+    }
+
+    @Override
+    public void onReceiveAdFailed(ZCNative result) {
+        if (result != null && result.getErrorsMsg() != null)
+            Log.e(TAG, "onReceiveAdFailed errorMsg=" + result.getErrorsMsg());
+    }
+
+    @Override
+    public void onShowSucceed(ZCNative result) {
+        Log.d(TAG, "onShowSucceed");
+        if (result != null) {
+            SplashView splashView = (SplashView) result;
+
+            /*
+             * There are two ways to add a custom view
+             * inflate SplashView.getCustomParentView() or SplashView.addCustomView(view)
+             */
+            //1
+            //LayoutInflater.from(getContext()).inflate(R.layout.custom_splash_layout, splashView.getCustomParentView(), true);
+
+            //2
+            LinearLayout linearLayout = new LinearLayout(result.getContext());
+            linearLayout.setGravity(Gravity.CENTER);
+            linearLayout.setBackgroundColor(Color.WHITE);
+            linearLayout.setLayoutParams(new ViewGroup.LayoutParams(MATCH_PARENT, Utils.dpToPx(100)));
+            TextView textView = new TextView(result.getContext());
+            textView.setText("custom");
+            textView.setTextSize(22);
+            linearLayout.addView(textView, new ViewGroup.LayoutParams(WRAP_CONTENT, WRAP_CONTENT));
+            linearLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(getBaseContext(), "custom", Toast.LENGTH_SHORT).show();
+                }
+            });
+            splashView.addCustomView(linearLayout);
+        }
+    }
+
+    @Override
+    public void onLandPageShown(ZCNative result) {
+        Log.d(TAG, "onLandPageShown");
+    }
+
+    @Override
+    public void onAdClicked(ZCNative result) {
+        Log.d(TAG, "onAdClicked");
+    }
+
+    @Override
+    public void onAdClosed(ZCNative result) {
+        Log.d(TAG, "onAdClosed");
+    }
+
+}, TIME_OUT);
+```
+
+
+
+## <a name="appwall">4.5 Appwall integration</a>
 
 > Configure the module's build.gradle for Appwall：
 
@@ -489,7 +577,7 @@ public class MyCTAdEventListener extends CTAdEventListener {
 
 
 
-## <a name="reward">4.5 Rewarded Video Ad Integration</a>
+## <a name="reward">4.6 Rewarded Video Ad Integration</a>
 
 > **Google Play Services**
 
@@ -624,7 +712,7 @@ public void videoRewarded(String rewardName, String rewardAmount) {
 ![image](https://user-images.githubusercontent.com/20314643/42371626-94e8e6a2-8142-11e8-9598-eb75de753070.png)
 
 
-## <a name="native_video">4.6 Native Video Ad Integration</a>
+## <a name="native_video">4.7 Native Video Ad Integration</a>
 
 > Configure the module's build.gradle for Native Video：
 
