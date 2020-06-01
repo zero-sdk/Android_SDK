@@ -2,6 +2,7 @@
 
 | Version | Release Date | Notes                                    |
 | ------- | :----------: | :--------------------------------------- |
+| 4.2.4 | 2020-5-09 | * fix bugs |
 | 4.2.2 | 2020-4-21 | * fix splash crash |
 | 4.2.0 | 2020-3-24 | * splash ad |
 | 4.1.1 | 2019-8-1 | * fix Initialization conflict and onAdClicked event non-callback issues |
