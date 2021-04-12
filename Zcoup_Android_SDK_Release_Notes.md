@@ -2,7 +2,8 @@
 
 | Version | Release Date | Notes                                    |
 | ------- | :----------: | :--------------------------------------- |
-| 4.2.9 | 2021-1-18 | *  Compatible with StrictMode, fix DownloadManager without disconnection, update AD network source.
+| 4.3.0 | 2021-4-12 | *  Add banner and interstitial to open deeplink function, and add the log of whether deeplink is opened successfully.|
+| 4.2.9 | 2021-1-18 | *  Compatible with StrictMode, fix DownloadManager without disconnection, update AD network source.|
 | 4.2.5 | 2020-6-01 | * support opening directly to default browser |
 | 4.2.4 | 2020-5-09 | * fix bugs |
 | 4.2.2 | 2020-4-21 | * fix splash crash |
