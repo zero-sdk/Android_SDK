@@ -159,35 +159,63 @@
 
    
 
-​	We suggest you define a class to implement the CTAdEventListener yourself , then you can just override the methods you need when you getBanner or getNative. See the following example:
+​	We suggest you define a class to implement the AdEventListener yourself , then you can just override the methods you need when you getBanner or getNative nd getSplash. See the following example:
 
 ``` java
-public class MyCTAdEventListener extends CTAdEventListener {
+public class MyCTAdEventListener extends AdEventListener {
+
+     /**
+     * Get ad success
+     *
+     * @param result Non-persistent object ZCNative
+     */
     @Override
     public void onReceiveAdSucceed(ZCNative result) {
     }
 
+    /**
+     * Get ad success
+     *
+     * @param result Persistent object AdsVO
+     */
     @Override
-    public void onReceiveAdVoSucceed(AdsNativeVO result) {
+    public void onReceiveAdVoSucceed(AdsVO result) {
     }
 
+
+    /**
+     * Ad display success
+     */
     @Override
-    public void onInterstitialLoadSucceed(ZCNative result) {
+    public void onShowSucceed(ZCNative result) {
     }
 
+
+    /**
+     * Get ad failed Got data fail + Json fail + Rendering fail
+     */
     @Override
     public void onReceiveAdFailed(ZCNative result) {
         Log.i("sdksample", "==error==" + result.getErrorsMsg());
     }
 
+    /**
+     * Go to landing page
+     */
     @Override
-    public void onLandpageShown(ZCNative result) {
+    public void onLandPageShown(ZCNative result) {
     }
 
+    /**
+     * Ad was clicked
+     */
     @Override
     public void onAdClicked(ZCNative result) {
     }
 
+    /**
+     * Ad is closed
+     */
     @Override
     public void onAdClosed(ZCNative result) {
     }
@@ -231,24 +259,37 @@ public class MyCTAdEventListener extends CTAdEventListener {
 
 ``` java
    private void showAd(ZCAdvanceNative zcAdvanceNative) {
-        ImageView img = (ImageView) adLayout.findViewById(R.id.iv_img);
-        ImageView icon = (ImageView) adLayout.findViewById(R.id.iv_icon);
-        TextView title = (TextView)adLayout.findViewById(R.id.tv_title);
-        TextView desc = (TextView)adLayout.findViewById(R.id.tv_desc);
-        Button click = (Button)adLayout.findViewById(R.id.bt_click);
-        ImageView adChoice = (ImageView)adLayout.findViewById(R.id.choice_icon);
-        
-        //show the image and icon yourself 
-        String imageUrl = zcAdvanceNative.getImageUrl();
-        String iconUrl = zcAdvanceNative.getIconUrl();          
-        title.setText(zcAdvanceNative.getTitle());
-        desc.setText(zcAdvanceNative.getDesc());
-        click.setText(zcAdvanceNative.getButtonStr());
-        adChoice.setImageURI(zcAdvanceNative.getAdChoiceIconUrl());
-        //offerType（1 : download ads; 2 : content ads）
-        int offerType = zcAdvanceNative.getOfferType();  
-         
-        zcAdvanceNative.registeADClickArea(adLayout);
+        SimpleDraweeView img = adLayout.findViewById(R.id.iv_img);
+        SimpleDraweeView icon = adLayout.findViewById(R.id.iv_icon);
+        TextView title = adLayout.findViewById(R.id.tv_title);
+        TextView desc = adLayout.findViewById(R.id.tv_desc);
+        TextView click = adLayout.findViewById(R.id.bt_click);
+        SimpleDraweeView ad_choice_icon = adLayout.findViewById(R.id.ad_choice_icon);
+	//show the image and icon yourself 
+        if (ctZCAdvanceNative.getImageFile() == null) {
+            //if no cache, get image from url
+            img.setImageURI(Uri.parse(ctZCAdvanceNative.getImageUrl()));
+        } else {
+            //loaded from cache
+            img.setImageURI(Uri.fromFile(ctZCAdvanceNative.getImageFile()));
+        }
+
+        if (ctZCAdvanceNative.getIconFile() == null) {
+            icon.setImageURI(Uri.parse(ctZCAdvanceNative.getIconUrl()));
+        } else {
+            //loaded from cache
+            icon.setImageURI(Uri.fromFile(ctZCAdvanceNative.getIconFile()));
+        }
+
+        title.setText(ctZCAdvanceNative.getTitle());
+        desc.setText(ctZCAdvanceNative.getDesc());
+        click.setText(ctZCAdvanceNative.getButtonStr());
+        ad_choice_icon.setImageURI(ctZCAdvanceNative.getAdChoiceIconUrl());
+
+        container.removeAllViews();
+
+        //只是注册点击区域,调此处设置
+        ctZCAdvanceNative.registeADClickArea(adLayout);
         container.addView(adLayout);
    }
 ```
