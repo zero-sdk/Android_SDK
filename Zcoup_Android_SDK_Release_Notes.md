@@ -2,6 +2,7 @@
 
 | Version | Release Date | Notes                                    |
 | ------- | :----------: | :--------------------------------------- |
+| 4.3.3 | 2021-8-17 | update WebSettins.getDefaultUserAgent to webView.getSettings().getUserAgentString()  |
 | 4.3.2 | 2021-4-25 | code optimizing |
 | 4.3.0 | 2021-4-12 | *  Add banner and interstitial to open deeplink function, and add the log of whether deeplink is opened successfully.|
 | 4.2.9 | 2021-1-18 | *  Compatible with StrictMode, fix DownloadManager without disconnection, update AD network source.|
